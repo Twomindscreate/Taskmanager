@@ -4,7 +4,6 @@ from .views import (
     UserViewSet, TeamViewSet, MembershipViewSet, TaskViewSet,
     FeedbackViewSet, PermissionViewSet, ReminderViewSet
 )
-from . import views 
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -17,5 +16,4 @@ router.register(r'reminders', ReminderViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('', views.home, name='home'),
 ]

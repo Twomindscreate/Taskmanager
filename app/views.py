@@ -1,6 +1,5 @@
 from rest_framework import viewsets
-from django.shortcuts import render
-from rest_framework.decorators import action
+from rest_framework.decorators import action  # Add this import
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 from .models import Team, Membership, Task, Feedback, Permission, Reminder
@@ -8,11 +7,6 @@ from .serializers import (
     UserSerializer, TeamSerializer, MembershipSerializer, TaskSerializer,
     FeedbackSerializer, PermissionSerializer, ReminderSerializer
 )
-
-
-def home(request):
-    return render(request, 'home.html')
-
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
